@@ -17,7 +17,8 @@ class MessageInputBox extends Component {
           name='message'
           value={this.props.value}
           onChange={this.handleChange}
-          onKeyPress={this.handleKeyPress}/>
+          onKeyPress={this.handleKeyPress}
+          autoFocus/>
       </div>
       )
   }

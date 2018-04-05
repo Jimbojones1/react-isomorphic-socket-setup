@@ -9,7 +9,6 @@ export default function (initialState) {
         const text = state.currentMessage.trim();
 
         if (text) {
-
           return {
             messages: [...state.messages, {id: state.messages.length + 1, text}],
             currentMessage: ''
