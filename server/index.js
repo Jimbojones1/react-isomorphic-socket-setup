@@ -1,12 +1,21 @@
+import path from 'path';
 import express from 'express';
+import handlebars from 'express-handlebars';
 import React from 'react';
-import ReactDOMServer from 'react-dom/server';
+import { renderToString } from 'react-dom/server';
 import App from './generated/app';
 
 const app = express();
 
+app.engine('handlebars', handlebars({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
+app.use(express.static(path.resolve(__dirname, '../dist')));
+
 app.get('/', (req, res) => {
-  res.send(ReactDOMServer.renderToString(<App />));
+  res.render('app', {
+    app: renderToString(<App />)
+  })
 });
 
 
