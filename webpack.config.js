@@ -5,11 +5,11 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
-const CLIENT_DIR = path.resolve(__dirname, 'client');
-const SERVER_DIR = path.resolve(__dirname, 'server/generated');
-const DIST_DIR = path.resolve(__dirname, 'dist');
+export const CLIENT_DIR = path.resolve(__dirname, 'client');
+export const SERVER_DIR = path.resolve(__dirname, 'server/generated');
+export const DIST_DIR = path.resolve(__dirname, 'dist');
 
-const rules = [{
+export const rules = [{
   test: /\.js$/,
   include: CLIENT_DIR,
   loader: 'babel-loader',
@@ -27,13 +27,13 @@ const rules = [{
 }
 ];
 
-const aliases = {
+export const aliases = {
   components: path.resolve(CLIENT_DIR, 'components'),
   reducers: path.resolve(CLIENT_DIR, 'reducers'),
   actions: path.resolve(CLIENT_DIR, 'actions')
 }
 
-module.exports = [{
+export const client = {
   mode: 'development',
   name: 'client',
   target: 'web',
@@ -52,8 +52,9 @@ module.exports = [{
   plugins: [
     new ExtractTextPlugin('bundle.css', {allChunks: true})
   ]
-},
-{
+}
+
+export const server = {
   mode: 'development',
   name: 'server',
   target: 'node',
@@ -76,4 +77,6 @@ module.exports = [{
   plugins: [
     new ExtractTextPlugin({filename: '[name].css'})
   ]
-}];
+};
+
+export default [client, server];

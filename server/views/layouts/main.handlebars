@@ -5,10 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <title>Isomorphic</title>
-  <link rel="stylesheet" type="text/css" href="bundle.css">
+  {{#if isDevelopment}}
+    <link rel='stylesheet' href="{{assetPath}}bundle.css">
+  {{/if}}
 </head>
 <body>
   {{{body}}}
-  <script src="bundle.js" async></script>
+  <script src="{{assetPath}}bundle.js" async></script>
 </body>
 </html>
