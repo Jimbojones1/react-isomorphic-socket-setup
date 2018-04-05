@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start-dev": "NODE_ENV=development nodemon --exec babel-node index.js -e js,handlebars",
+    "d-webpack":  "babel-node webpack.development.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

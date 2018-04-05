@@ -41,7 +41,7 @@ const devConfig = Object.assign({}, config.client, {
       {
         test: /\.js$/,
         include: config.CLIENT_DIR,
-        use: ['babel-loader']
+        use: ['react-hot-loader/webpack', 'babel-loader']
       },
       {
         test: /\.less$/,
