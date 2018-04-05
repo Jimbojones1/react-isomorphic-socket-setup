@@ -78,6 +78,18 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./actions/message-actions.js":
+/*!************************************!*\
+  !*** ./actions/message-actions.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.updateMessage = updateMessage;\nexports.addMessage = addMessage;\nvar UPDATE_MESSAGE = exports.UPDATE_MESSAGE = 'update-message';\nvar ADD_MESSAGE = exports.ADD_MESSAGE = 'add-message';\n\nfunction updateMessage(message) {\n  return { type: UPDATE_MESSAGE, message: message };\n}\n\nfunction addMessage() {\n  return { type: ADD_MESSAGE };\n}\n\n//# sourceURL=webpack:///./actions/message-actions.js?");
+
+/***/ }),
+
 /***/ "./components/app/index.js":
 /*!*********************************!*\
   !*** ./components/app/index.js ***!
@@ -86,7 +98,7 @@ module.exports =
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\n__webpack_require__(/*! ./style.less */ \"./components/app/style.less\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n// don't need a name cuz were just importing file\n\n\nvar App = function (_Component) {\n  _inherits(App, _Component);\n\n  function App() {\n    _classCallCheck(this, App);\n\n    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));\n  }\n\n  _createClass(App, [{\n    key: 'render',\n    value: function render() {\n      return _react2.default.createElement(\n        'div',\n        null,\n        'Hellow World From React COmpoenten'\n      );\n    }\n  }]);\n\n  return App;\n}(_react.Component);\n\nexports.default = App;\n\n//# sourceURL=webpack:///./components/app/index.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"react-redux\");\n\nvar _redux = __webpack_require__(/*! redux */ \"redux\");\n\n__webpack_require__(/*! ./style.less */ \"./components/app/style.less\");\n\nvar _messageList = __webpack_require__(/*! components/message-list */ \"./components/message-list/index.js\");\n\nvar _messageList2 = _interopRequireDefault(_messageList);\n\nvar _messageInputBox = __webpack_require__(/*! components/message-input-box */ \"./components/message-input-box/index.js\");\n\nvar _messageInputBox2 = _interopRequireDefault(_messageInputBox);\n\nvar _messageActions = __webpack_require__(/*! actions/message-actions */ \"./actions/message-actions.js\");\n\nvar messageActionCreators = _interopRequireWildcard(_messageActions);\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n// don't need a name cuz were just importing file\n\n\nvar App = function (_Component) {\n  _inherits(App, _Component);\n\n  function App() {\n    _classCallCheck(this, App);\n\n    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));\n  }\n\n  _createClass(App, [{\n    key: 'render',\n    value: function render() {\n      var _props = this.props,\n          messages = _props.messages,\n          currentMessage = _props.currentMessage,\n          addMessage = _props.addMessage;\n\n\n      return _react2.default.createElement(\n        'div',\n        null,\n        _react2.default.createElement(_messageList2.default, { messages: messages }),\n        _react2.default.createElement(_messageInputBox2.default, {\n          value: currentMessage,\n          onChange: updateMessage,\n          onSubmit: addMessage })\n      );\n    }\n  }]);\n\n  return App;\n}(_react.Component);\n\nfunction mapStateToProps(state) {\n  return {\n    messages: state.messages,\n    currentMessage: state.currentMessage\n  };\n}\n\nfunction mapDispatchToProps(dispatch) {\n  return (0, _redux.bindActionCreators)(messageActionCreators, dispatch);\n}\n\nexports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(App);\n\n//# sourceURL=webpack:///./components/app/index.js?");
 
 /***/ }),
 
@@ -101,6 +113,30 @@ eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./co
 
 /***/ }),
 
+/***/ "./components/message-input-box/index.js":
+/*!***********************************************!*\
+  !*** ./components/message-input-box/index.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar MessageInputBox = function (_Component) {\n  _inherits(MessageInputBox, _Component);\n\n  function MessageInputBox() {\n    var _ref;\n\n    var _temp, _this, _ret;\n\n    _classCallCheck(this, MessageInputBox);\n\n    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {\n      args[_key] = arguments[_key];\n    }\n\n    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MessageInputBox.__proto__ || Object.getPrototypeOf(MessageInputBox)).call.apply(_ref, [this].concat(args))), _this), _this.handleKeyPress = function (e) {\n      if (e.which === 13) {\n        _this.props.onSubmit();\n        e.preventDefault();\n      }\n    }, _this.handleChange = function (e) {\n      _this.props.onChange(e.target.value);\n    }, _temp), _possibleConstructorReturn(_this, _ret);\n  }\n\n  _createClass(MessageInputBox, [{\n    key: 'render',\n    value: function render() {\n      return _react2.default.createElement(\n        'div',\n        { className: 'message-entry-box' },\n        _react2.default.createElement('textarea', {\n          name: 'message',\n          value: this.props.value,\n          onChange: this.handleChange,\n          onKeyPress: this.handleKeyPress })\n      );\n    }\n  }]);\n\n  return MessageInputBox;\n}(_react.Component);\n\nexports.default = MessageInputBox;\n\n//# sourceURL=webpack:///./components/message-input-box/index.js?");
+
+/***/ }),
+
+/***/ "./components/message-list/index.js":
+/*!******************************************!*\
+  !*** ./components/message-list/index.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar MessageList = function MessageList(_ref) {\n  var messages = _ref.messages;\n\n\n  var messageText = messages.map(function (message, text) {\n    return _react2.default.createElement(\n      'li',\n      { key: 'message-' + index },\n      message.text\n    );\n  });\n\n  return _react2.default.createElement(\n    'ul',\n    { className: 'message-list' },\n    messageText\n  );\n};\n\nexports.default = MessageList;\n\n//# sourceURL=webpack:///./components/message-list/index.js?");
+
+/***/ }),
+
 /***/ "react":
 /*!************************!*\
   !*** external "react" ***!
@@ -109,6 +145,28 @@ eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./co
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"react\");\n\n//# sourceURL=webpack:///external_%22react%22?");
+
+/***/ }),
+
+/***/ "react-redux":
+/*!******************************!*\
+  !*** external "react-redux" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"react-redux\");\n\n//# sourceURL=webpack:///external_%22react-redux%22?");
+
+/***/ }),
+
+/***/ "redux":
+/*!************************!*\
+  !*** external "redux" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"redux\");\n\n//# sourceURL=webpack:///external_%22redux%22?");
 
 /***/ })
 

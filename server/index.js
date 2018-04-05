@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 
   res.render('app', {
     app: renderToString(<App />),
-    initialState: JSON.stringify(initialState);
+    initialState: JSON.stringify(initialState)
   })
 });
 
