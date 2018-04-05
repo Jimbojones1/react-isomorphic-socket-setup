@@ -3,8 +3,8 @@ import React from 'react';
 
 const MessageList = ({messages}) => {
 
-  const messageText = messages.map((message, text) => {
-    return <li key={`message-${index}`}>{message.text}</li>
+  const messageText = messages.map((message, i) => {
+    return <li key={`message-${i}`}>{message.text}</li>
   })
 
 

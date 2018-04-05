@@ -3,17 +3,18 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 // don't need a name cuz were just importing file
 import {} from './style.less';
-import MessageList from '../components/message-list';
-import MessageEntryBox from '../components/message-entry-box';
-import * as messageActionCreators from '../actions/message-actions';
+import MessageList from 'components/message-list';
+import MessageEntryBox from 'components/message-input-box';
+import * as messageActionCreators from 'actions/message-actions';
 
 class App extends Component {
   render(){
 
-    {
+   const {
       messages,
       currentMessage,
-      addMessage
+      addMessage,
+      updateMessage
     } = this.props;
 
     return (

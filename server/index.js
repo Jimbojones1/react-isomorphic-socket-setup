@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
     );
 
   res.render('app', {
-    app: renderToString(<App />),
+    app: renderToString(appContent),
     initialState: JSON.stringify(initialState)
   })
 });

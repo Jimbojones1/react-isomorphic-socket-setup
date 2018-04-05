@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class MessageInputBox extends Component {
-  handleKeyPress = (e) =>{
+  handleKeyPress = (e) => {
     if(e.which === 13){
       this.props.onSubmit();
       e.preventDefault()

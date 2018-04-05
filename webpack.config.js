@@ -4,6 +4,7 @@ const path = require('path');
 // that will be included with index.html
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+
 const CLIENT_DIR = path.resolve(__dirname, 'client');
 const SERVER_DIR = path.resolve(__dirname, 'server/generated');
 const DIST_DIR = path.resolve(__dirname, 'dist');
@@ -13,6 +14,7 @@ const rules = [{
   include: CLIENT_DIR,
   loader: 'babel-loader',
   query: {
+    plugins: [ 'transform-class-properties'],
     presets: ['env', 'react']
   }
 },
@@ -24,6 +26,12 @@ const rules = [{
   })
 }
 ];
+
+const aliases = {
+  components: path.resolve(CLIENT_DIR, 'components'),
+  reducers: path.resolve(CLIENT_DIR, 'reducers'),
+  actions: path.resolve(CLIENT_DIR, 'actions')
+}
 
 module.exports = [{
   mode: 'development',
@@ -39,9 +47,7 @@ module.exports = [{
     rules: rules
   },
   resolve: {
-    alias: {
-      components: path.resolve(CLIENT_DIR, 'components')
-    }
+   alias: aliases
   },
   plugins: [
     new ExtractTextPlugin('bundle.css', {allChunks: true})
@@ -65,9 +71,7 @@ module.exports = [{
     rules: rules
   },
   resolve: {
-    alias: {
-      components: path.resolve(CLIENT_DIR, 'components')
-    }
+    alias: aliases
   },
   plugins: [
     new ExtractTextPlugin({filename: '[name].css'})
